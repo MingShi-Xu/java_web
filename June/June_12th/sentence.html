@@ -6,7 +6,6 @@
         <style>
         .d{
             margin: 130px;
-            scroll-snap-stop: 130px;
             width:947px;
             height:240px;
             background-color:#F1C400;
@@ -24,11 +23,19 @@
             color: #313a1e;
             text-align: left;
         }
+        .span1:before{
+            content:'"';
+        }
+        .span1:after{
+            content: '"';
+        }
+
         </style>
     </head>
 
     <body>
         
-        <div class="d" width="750px"><p class="p">John Doe&Sons</p>"We highly appreciate the enthusiasm and creative talent of the people at Legend!"</div>
+        <div class="d" width="750px"><p class="p">John Doe&Sons</p><span class="span1">We highly appreciate the enthusiasm 
+            and creative talent of the people at Legend!</span></div>
     </body>
 </html>

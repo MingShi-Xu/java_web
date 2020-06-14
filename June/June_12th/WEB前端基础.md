@@ -1,14 +1,13 @@
 # WEB前端基础
-## 一、WEB概述、
-### 1.软件架构、
-#### C/S架构
+## 一.软件架构、
+### C/S架构
 客户端/服务器端
 
 - 优点：	
  用户体验好
 - 缺点：
  	 开发，安装，部署，维护麻烦
-####  B/S架构
+###  B/S架构
 (Browser/Server) 浏览器/服务器
 只需要一个浏览器，用户用过不同的网址(URL),客户访问不同的服务器端程序
 
@@ -46,7 +45,7 @@
 
   JavaScript：控制页面的元素，让页面有一些动态的效果
 
-### 2.HTML
+## 二.HTML
 
 - (了解)概念：Hyper Text Markup Language 超文本标记语言
 
@@ -86,14 +85,27 @@
 
     head：头标签，用于指定html文档的一些属性。引入外部的资源(meta标签指定字符集)
 
+    ```html
+    
+    ```
+<meta charset="UTF-8">设置当前文字字符编码
+    ```
+
     title：标题标签
 
     body：体标签
-
+  
+    ```html
+    <header>
+    <footer>
+    <section>
+    <aside>侧边栏
+    ```
+  
     !DOCTYPE：定义文档标签(!DOCTYPE html)  html5中定义该文档是html文档
-
+  
   - 文本标签：和文本有关的标签
-
+  
     ```html
     注释：<!-- 注释内容 -->
     <h1> to <h6> :1-6级标签(自带换行)
@@ -114,19 +126,22 @@
         width:数值，单位是px(像素)
         数值%:占比相对于父元素的比例
     <center>:居中显示
+    ```
   ```
   
   
+  ```
   
 - 图片标签
   
   img:展示图片(自闭合)
   
     ```html
-    <img src="图片存放位置" alt="图片描述"/>
+    <img src="图片存放位置" alt="图片描述" title="介绍"/>
+  title:鼠标放在图片上图片的显示
     相对路径: ./代表当前目录
     		../代表上一级目录
-  ```
+    ```
   
   
   
@@ -141,7 +156,7 @@
         type 指定类型(disc,circle,square)
         start 指定开始位置
         
-  ```
+    ```
   
   li:(放在ol语句中)
   
@@ -152,7 +167,7 @@
   a:定义一个超链接
   
     ```html
-    <a href="http://www.i.com">点击</a>
+    <a href="http://www.i.com" title="网址介绍">点击</a>
     属性:href:指定访问资源的URL(统一资源定位符)
     	href可以指定当前页面位置
     
@@ -162,7 +177,7 @@
     属性:target在哪个窗口打开
     	_self默认在当前页面
     	_blank新建空白页面
-  ```
+    ```
   
   往自己内部跳转示例:
   
@@ -173,7 +188,7 @@
     <h1> <a name="C1">C4</a></h1>
     <div>在也是一段文字</div>
     
-  ```
+    ```
   
   
   
@@ -188,16 +203,18 @@
     ```html
     <div id="header"><h1></h1></div>
     <div id="footer"><h1></h1></div>
-  ```
+    ```
   
   html5:语义化标签
   
     ```html
     <header></header>
     <footer></footer>
-  ```
+    ```
   
 - 表格标签:table
+  
+  **caption:定义表格标题**
   
   **tr:定义行**
   
@@ -210,10 +227,10 @@
   **th:定义表头单元格**
   
     自定义列表：
-    
+  
     ​	
-    
-    ```html
+  
+  ```html
     <dl>
     <dt>Coffee</dt>
     <dd>Black hot drink</dd>
@@ -225,8 +242,8 @@
     Black hot drink
     Milk
     White cold drink
-    ```
-    
+  ```
+  
   
   
   ```html
@@ -247,22 +264,22 @@
   	<td>李四</td>
     	<td>60</td>
     </tr>
-    ```
-    
+  ```
+  
     **cellpadding:通常定义为0，内容与单元格之间的距离**
-    
+  
     **cellspacing:定义单元格之间的距离，如果指定为0，则单元格的线会合为一条**
-    
+  
     bgcolor:背景色
-    
+  
     align：对齐格式
-    
+  
     **caption：定义表格标题**
-    
+  
     thead：表示表格的头部分
-    
+  
     tbody：表示表格的体部分
-    
+  
     tfoot：表示表格的脚部分
   
 - **注意：应该避免使用center，font,align,bgcolor,color使用style代替**
@@ -360,7 +377,7 @@ The <abbr title="People's Republic of China">PRC</abbr> was founded in 1949.
 
   ```html
   <form action="http://" method="get">
-      用户名：<input name="username"><br/>
+      用户名：<input type="text" name="username"><br/>
       有name属性，会被提交
       密码:<input><br/>
       没有name属性，不会被提交
@@ -387,6 +404,9 @@ The <abbr title="People's Republic of China">PRC</abbr> was founded in 1949.
 ```
 
 ​		password：密码输入框
+
+​		number：数字输入框，右边有上下箭头
+
 ​		**radio:**单选框
 
 **单选框注意：**
@@ -457,7 +477,7 @@ textarea：文本域
 </textarea>
 ```
 
-### 3.CSS
+## 三.CSS
 
 （页面美化和布局控制）
 
@@ -528,6 +548,10 @@ textarea：文本域
     **注意：**
 
     - css作用的范围越来越大
+    
+  - **三种链接方式的优先级**
+
+    内联式>嵌入式>外部式
 
 - CSS语法
 
@@ -547,7 +571,510 @@ textarea：文本域
 
     **注意：**每一对属性需要分开
 
-  - 属性：
+    - 标签选择器：标签名称{}
+
+    - 类选择器：.类名{}
+
+      ```html
+      .abc{}
+      <span class="abc"></span>
+      ```
+
+      
+
+    - id选择器：#id名称{}
+
+      **注意：**
+
+      id选择器最多只能用一次，类选择器可以使用多次
+
+      可以使用类选择器词列表方法为一个元素同时设置多个样式
+
+      
+
+      ```html
+      .stress{
+          color:red;
+      }
+      .bigsize{
+          font-size:25px;
+      }
+      <p>到了<span class="stress bigsize">三年级</span>下学期时，我们班上了一节公开课...</p>
+      ```
+
+    - 子选择器：>用于选择指定标签元素的第一代子元素
+
+      ```html
+      .food>li{border:1px solid red;}
+      ```
+
+    - 后代选择器：空格  用于选择指定标签元素下的后辈元素
+
+      ```html
+      .first span{color:red;}
+      ```
+
+    - 通用选择器：*匹配html中所有标签元素
+
+      ```html
+      *{
+      	color:red;
+      }
+      ```
+
+    - 伪类选择器：允许给不存在的标签(标签的某种状态)设置样式
+
+      ```html
+      a::hover{
+      	color:red;
+      }
+      <!-- 将a标签鼠标滑过的状态设置字体颜色变红-->
+      ```
+
+    - 分组选择器：为html多个标签元素设置同一个样式
+
+      ```html
+      h1,span{color:red;}
+      ```
+
+  - CSS的继承：
+
+    ```html
+    p{color:red;} 
+    <!--这里的颜色适用于所有p标签中的元素,包括子元素span标签-->
+    <p>1234<span>5678</span></p>
+    ```
+
+    **注意：**css有一些样式是不具有继承性的
+
+    如：border:1px solid red;
+
+    ```html
+    <border:1px solid red;>
+    <p>1234<span>5678</span></p>
+    <!--这里只给p标签设置了边框像素为1、红色、实心边框线,而对元素span是没有起到作用的-->
+    ```
+
+  - **选择器的优先级：内联样式>id选择器>类选择器>标签选择器>通配符选择器**
+
+  - 标签的权值计算规则：
+
+    标签权值为1
+
+    类选择器的权值为10
+
+    ID选择器的权值最高为100
+
+    ```html
+    p{color:red;} /*权值为1*/
+    p span{color:green;} /*权值为1+1=2*/
+    .warning{color:white;} /*权值为10*/
+    p span.warning{color:purple;} /*权值为1+1+10=12*/
+    #footer .note p{color:yellow;} /*权值为100+10+1=111*/
+    ```
+
+    浏览器是根据权值来判断使用哪种CSS样式，哪种高用哪种
+
+    **!important拥有最高权值，要写在分号之前**
 
     
 
+  - 属性：
+
+    设置字体：
+
+    ​	font-size:设置字体大小
+
+    ​	color:设置字体颜色
+
+    ​	font-weight：字体粗细
+
+    ​	font-family:设置字体(电脑要安装该字体，不然看不见)
+
+    ​	font-style:
+
+    ​			normal：正常字体(font-style)默认值
+
+    ​			italic：设置字体为斜体
+
+    ​			oblique：设置字体为倾斜
+
+    ​	line-height:设置行间距
+
+    font设置可以简写成一行:使用这种简写至少要指定font-size和font-family属性，其他属性未指定会自动使用默认值
+
+    缩写时font-size与line-height中间要加/
+
+    text-decoration：overline文本上的一条线
+
+    ​								underline文本下的一条线
+
+    ​								line-through穿过文本的一条线
+
+    text-indent：为文本添加首行缩进
+
+    ```html
+    p{text-indent:2em;}
+    <!--2em就是文字的2倍大小-->
+    ```
+
+    letter/word-spacing：设置字母或单词之间的间距
+
+    text-align：设置文本对齐方式
+
+- 元素分类
+
+  - 块状元素：
+
+    ```html
+    <div> <p> <h1>...<h6> <ol> <ul> <dl> <table> <address> <blockquote> <form>
+    ```
+
+    **display:block 讲元素显示为块级元素**
+
+    ```html
+    a{display:block;}设置a为块级元素
+    ```
+
+    特点：①独占一行
+
+    ​			②元素的高度、宽度、行高以及顶和底边距都可设置
+
+    ​			③元素宽度在不设置时，和父元素宽度一致
+
+  - 内联元素：
+
+    ```html
+    <a> <span> <br> <i> <em> <strong> <label> <q> <var> <cite> <code>
+    ```
+
+    **display:inline设置元素为内联元素**
+
+    ```html
+    div{display:inline;}
+    <div>我要变成内联元素</div>
+    ```
+
+    特点：①和其他元素都在一行上
+
+    ​			**②元素的高度、宽度以及顶部和底部边距不可设置**
+
+    ​			③元素的宽度就是它包含的文字或者图片的宽度
+
+  - 内联块状元素：
+
+    ```html
+    <img> <input>
+    ```
+
+    **display:inline-block**
+
+    特点：①和其他元素都在一行上
+
+    ​			②元素的高度、宽度、行高以及顶和底边距都可设置
+
+    **none:隐藏元素**
+
+- 盒子模型
+
+  width,height指的是填充以里的内容范围
+
+  border-left左边框 border-right右边框
+
+  padding-left左填充 padding-right右填充
+
+  margin-left左边界 margin-right右边界
+
+  一个元素实际宽度 = 左边界+左边框+左填充+内容宽度+右填充+右边框+右边界
+
+  - background-color：背景色
+
+  - border：为盒子添加边框
+
+    border-style：dashed(虚线) dotted(点线) solid(实线)
+
+    border-color 可设置为十六进制颜色
+
+    border-width：thin| medium | thick(最常用px)
+
+  - padding为盒子设置内边距
+
+    有顺序：上右下左
+
+    ```html
+    div{padding:10px;}全为10像素
+    ```
+
+    ```html
+    div{padding:10px 20px;}上下为10px，左右为20px
+    ```
+
+  - margin：元素与其他元素之间的距离，也可分为上右下左
+
+    margin-top:20px;
+
+    margin-right:10px;
+
+    margin-bottom:15px;
+
+    margin-left:30px;
+
+  - padding和margin的区别：padding在边框里，margin在边框外
+
+- **CSS布局模型**：
+
+  - 流动模型：Flow(默认的网页布局模式)
+
+    特征：①块状元素都会在所处的包含元素内自上而下按顺序垂直延申分布，因为默认块状元素宽度都是100%
+
+    ​			②内联元素会在所处的包含元素内从左到右水平分布
+
+  - **浮动模型：**Float(环绕文字)
+
+    ```html
+    div{
+        width:200px;
+        height:200px;
+        border:2px red solid;
+        float:left;
+    }
+    
+    div{
+        width:200px;
+        height:200px;
+        border:2px red solid;
+    }
+    #div1{float:left;}
+    #div2{float:right;}
+    ```
+
+    层模型：每个图层能够精确定位
+
+    ①绝对定位：(position:absolute)
+
+    ```html
+    div{
+    	width:20px;
+    	height:200px;
+    	border:2px red solid;
+    	position:absolute;
+    	left:100px;
+    	top:50px;
+    }
+    ```
+
+    如果不存在这样的包含块，则相对于body元素，既浏览器窗口
+
+    ②相对定位：(position:relative)
+
+    ```html
+    #div{
+    	width:200px;
+    	height:200px;
+    	border:2px red solid;
+    	position:relative;
+    	left:100px;
+    	top:50px;
+    }
+    <div class="div1"></div>
+    ```
+
+    *偏移前的位置保留不动，比如在div中加span标签*
+
+    *span标签中内容还是在div后面*
+
+    ③固定定位：(position:fixed)
+
+    ```html
+    #div{
+    	width:200px;
+    	height:200px;
+    	border:1px red solid;
+    	position:fixed;
+    	left:0px;
+    }
+    ```
+
+    *拖动滚动条时位置固定不变*
+
+  - relative与absolute组合使用
+
+    - 参照定位的元素必须是相对定位元素的父元素
+
+      ```html
+      <div id="box1">    这是参照定位元素
+      	<div id="box2">相对参照元素进行定位</div>    这是相对定位元素
+      	</div>
+      ```
+
+    - 参照定位元素必须加position:relative
+
+      ```html
+      #box1{
+      width:100px;
+      height:100px;
+      position:relative;
+      }
+      ```
+
+    - 定位元素加position:absolute,就可以使用top,boottom,left,right来进行偏移定位
+
+      ```html
+      #box2{
+      position:absolute;
+      left:0px;
+      }
+      ```
+
+  - 弹性盒模型:
+
+    flex属性
+
+    ```html
+    <body>
+        <div class="box">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+    </body>
+    
+    <style>
+        .box{
+            height:400px;
+            background:skyblue;
+            display:flex;
+        }
+        .box1{
+            width:200px;
+            height:200px;
+            background:red;
+        }
+        .box2{
+            width:200px;
+            height:200px;
+            background:green;
+        }
+        .box3{
+            width:200px;
+            height:200px;
+            background:orange;
+        }
+    </style>
+    ```
+
+    在父类容器中加flex
+
+    - 设置display:flex属性可以把块级元素在一排显示
+    - flex需要添加在父元素上，改变子元素的排列顺序
+    - 默认从左往右以此排列，且和父元素左边没有间隙
+
+    **justify-content**属性设置横轴排列方式
+
+    justify-content:**flex-start**
+
+    ​	交叉轴的起点对齐
+
+    justify-content:**flex-end** 右对齐
+
+    justify-content:**center**居中
+
+    justify-content:**space-between**两端对齐，项目之间的间隔都相等
+
+    justify-content:**space-around**每项两侧的间隔相等，所以项目之间间隔比项目与边框之间的间隔大一倍
+
+    **align-items**属性设置纵轴排列方式
+
+    **flex-start:默认值，左对齐**
+
+    flex-end:与底部对齐
+
+    center:在中间
+
+    **baseline**:项目的第一行文字的基线对齐(文字底部对齐)
+
+    **stretch(默认值)**:如果项目未设置高度或为auto，将占满整个容器的高度
+
+  - flex占比(定义在子元素中)
+
+    ①flex属性的值只能是正整数，表示占比多少
+
+    ②给元素设置了flex之后，其宽度属性会失效
+
+    ③设置子元素相对于父元素的占比
+
+  - 水平居中设置
+
+    - 行内元素
+
+      通过父类给元素设置text-align:center来实现
+
+      ```html
+      <body>
+          <div class="div1">我要居中</div>
+      </body>
+      
+      <style>
+          .div1{
+              text-align:center;
+          }
+      </style>
+      ```
+
+    - 定宽块状元素
+
+      通过设置左右margin值为auto实现居中
+
+      ```html
+      <!--已知宽高实现盒子水平垂直居中-->
+      <style>
+          .box{
+              border:1px red solid;
+              height:300px;
+              position:relative;
+          }
+          .box1{
+              position:absolute;
+              top:50%;
+              left:50%;
+              margin:-100px 0px 0px -100px;
+              width:200px;
+              height:200px;
+              border:1px red solid;
+          }
+      </style>
+      ```
+
+      **解释：**
+
+      ​		①利用父元素设置相对位置，子元素设置绝对位置
+
+      ​		②子元素设置上和左偏移的值都是50%，是元素的左上角在父元素中心点的位置
+
+      ​		③然后再用margin给上和左都黑负的自身宽高的一般，就能达到垂直水平居中的效果
+
+      ```html
+      <!-- 不定宽高实现盒子垂直水平居中 -->
+       <style>
+              .box {
+                  background-color: burlywood;
+                  border: 1px blue solid;
+                  height: 300px;
+                  position: relative;
+              }
+      
+              .box1 {
+                  background-color: chartreuse;
+                  border: 1px red solid;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%,-50%);
+                  /*
+                  	用css3属性translate位移,给上和左都位移-50%距离，就能达到垂直水平居中的效果
+                  */
+              }
+          </style>
+      ```
+
+      
