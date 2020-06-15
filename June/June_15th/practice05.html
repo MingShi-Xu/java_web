@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .container {
+            width: 500px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid black;
+            position: relative;
+            overflow: hidden;
+            font-size: 0px;
+        }
+
+        .photo {
+            white-space: nowrap;
+            animation: photo 10s linear infinite;
+            float: left;
+            position: absolute;
+        }
+        * img{
+            width: 500px;
+            height: 400px;
+        }
+
+        @keyframes photo{
+            0%{
+                transform: translate(0);
+            }
+            25%{
+                transform: translate(-300px);
+            }
+            50%{
+                transform: translate(-600px);
+            }
+            75%{
+                transform: translate(-900px);
+            }
+            100%{
+                transform: translate(-1500px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="photo">
+                <img src="d:\\MyUse\\photo\\1.jpg" alt="图片1">
+                <img src="d:\\MyUse\\photo\\2.jpg" alt="图片2">
+                <img src="d:\\MyUse\\photo\\3.jpg" alt="图片3">
+                <img src="d:\\MyUse\\photo\\4.jpg" alt="图片4">
+                <img src="d:\\MyUse\\photo\\1.jpg" alt="图片1">
+        </div>
+    </div>
+</body>
+
+</html>
